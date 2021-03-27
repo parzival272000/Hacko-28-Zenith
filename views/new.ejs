@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<div class="ui main text container segment">
+	<div class="ui huge header">
+		Add the Recipe
+	</div>
+	<form class="ui form" action="/posts" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="title" placeholder="title">
+		</div>
+		<div class="field">
+			<label>Category</label>
+			<select  name="image">
+               <option value="https://i.pinimg.com/originals/a1/2b/43/a12b437175f8a5ea5ec4fb57fbf916c6.jpg">Trauma related</option>
+               <option value="https://cdn.tinybuddha.com/wp-content/uploads/2020/05/Joy.png">Stress and Depression related</option>
+               <option value="https://i.imgur.com/seOyLHP.jpg">Illness related</option>
+               <option value="https://www.vippng.com/png/detail/22-220737_413kib-722x768-498-anime-girl-thinking-png.png">Other</option>
+            </select>
+			<!--<input type="text" name="post[image]" placeholder="image url">-->
+		</div>
+		<div class="field">
+			<label>Content</label>
+			<textarea name="description" placeholder="gaming post goes here"></textarea>
+		</div>
+		<input class="ui violet inverted button" type="submit">
+	</form>
+</div>
+<%- include("partials/footer.ejs") %>

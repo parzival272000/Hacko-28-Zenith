@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") %>
+<div class="jumbotron">
+	<h1 class="text-center display-3">
+		Share To Heal
+	</h1>	
+</div>
+<div class="container" id="head">
+	<div class="row">
+		
+		<% posts.forEach(function(post){ %>
+		<% if(post.image=="https://cdn.tinybuddha.com/wp-content/uploads/2020/05/Joy.png") { %>
+		<div class="col-lg-6">
+			
+                <div class="card mb-5">
+					<div>
+						<img class="card-img-top" src=" <%=post.image %>">
+					</div>
+					<div class="content">
+						<h1>
+		                        <%= post.title%>
+						</h1>
+					
+						<div class="meta">
+							 <span><%=post.created.toDateString() %></span>
+						</div>
+						<div class="description">
+							<p>
+		              <%= post.description.substring(0,100)%>...<!--used for restricting text-->
+	               </p>
+						</div>
+						<div class="extra">
+							<div class="ui left labeled button" tabindex="0">
+							<a class="ui basic right pointing label" href="/posts/<%=post._id%>">Read
+							</a>
+							<a class="ui red inverted button"  href="/posts/<%=post._id%>">
+                                <i class="newspaper icon"></i> Post
+                            </a>
+							</div>
+						</div>
+					</div>
+	               
+	             
+                 </div>
+
+		  </div>
+		<% }; %>
+		<% });%>
+	</div>
+</div>
+
+<%- include("partials/footer.ejs") %>

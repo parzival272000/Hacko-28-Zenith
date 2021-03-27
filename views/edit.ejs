@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<div class="ui main text container segment">
+	<div class="ui huge header">
+		Edit <%= post.title %>
+	</div>
+	<form class="ui form" action="/posts/<%= post._id%>?_method=PUT" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="post[title]" value="<%=post.title%>">
+		</div>
+		<div class="field">
+			<label>Update Image from default</label>
+			<input type="text" name="post[image]" value="<%= post.image%>">
+		</div>
+		<div class="field">
+			<label>Content</label>
+			<textarea name="post[description]"><%=post.body%></textarea>
+		</div>
+		<input class="ui violet inverted button" type="submit">
+	</form>
+</div>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,168 @@
+
+<html>
+	<head>
+		<title>Share To Heal</title>
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+		<link rel="stylesheet"  href="/stylesheets/landing.css">
+		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-gray-500 mb-3">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+      <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white" href="#pablo">
+        <i class="american sign language interpreting icon"></i>ShareToHeal
+      </a>
+      <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" onclick="toggleNavbar('example-collapse-navbar')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div class="lg:flex flex-grow items-center hidden" id="example-collapse-navbar">
+      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/">
+            <span class="ml-2">Home</span>
+          </a>
+        </li>
+		<li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"  href="/posts">
+            <span class="ml-2">View All Posts</span>
+          </a>
+        </li>
+		  <%if(currentUser){%>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"  href="/posts/userprofile">
+            <span class="ml-2">Logged in as <%=currentUser.username%></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/logout">
+            <span class="ml-2">Logout</span>
+          </a>
+        </li>
+		  <%}else{%>
+		<li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"  href="/login">
+            <span class="ml-2">Login</span>
+          </a>
+        </li>
+		<li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/register">
+            <span class="ml-2">SignUp</span>
+          </a>
+        </li>
+		<li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/profregister">
+            <span class="ml-2">SignUp As Professional</span>
+          </a>
+        </li>
+		  <%}%>	
+      </ul>
+    </div>
+  </div>
+</nav>
+	
+
+    
+		
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0">
+      <img class="h-48 w-full object-cover md:w-48" src="https://i.pinimg.com/originals/a1/2b/43/a12b437175f8a5ea5ec4fb57fbf916c6.jpg" alt="Man looking at item at a store">
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Trauma Related</div>
+      <a href="/poststr" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Read Posts under this section</a>
+      <p class="mt-2 text-gray-500">Post-traumatic stress disorder (PTSD) is a mental health condition that's triggered by a terrifying event — either experiencing it or witnessing it. </p>
+    </div>
+  </div>
+</div>
+		<div>
+		>>
+		</div>
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0">
+      <img class="h-48 w-full object-cover md:w-48" src="https://cdn.tinybuddha.com/wp-content/uploads/2020/05/Joy.png" alt="Man looking at item at a store">
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"> Stress and Depression related</div>
+      <a href="/postsstr" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Read posts under this section</a>
+      <p class="mt-2 text-gray-500">Depression has many possible causes, such as genetics, brain chemicals and your life situation. </p>
+    </div>
+  </div>
+</div>	
+<div>
+		>>
+</div>	
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0">
+      <img class="h-48 w-full object-cover md:w-48" src="https://images.unsplash.com/flagged/photo-1578535689084-b804a326a840?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="Man looking at item at a store">
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"> Illness experiences</div>
+      <a href="/postsill" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Read posts under this section</a>
+      <p class="mt-2 text-gray-500">an individual who feels unwell for the purpose of defining their state of health and obtaining physical or emotional relief </p>
+    </div>
+  </div>
+</div>	
+
+<div>
+		>>
+</div>		
+		
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0">
+      <img class="h-48 w-full object-cover md:w-48" src="https://images.unsplash.com/photo-1518655061710-5ccf392c275a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" alt="Man looking at item at a store">
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"> Other experiences</div>
+      <a href="/postsother" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Read posts under this section</a>
+      <p class="mt-2 text-gray-500">Any other instance you wish to share</p>
+    </div>
+  </div>
+</div>	
+<div>
+		>>
+</div>
+
+	
+
+	
+<script>
+  function toggleNavbar(collapseID){
+    document.getElementById(collapseID).classList.toggle("hidden");
+    document.getElementById(collapseID).classList.toggle("flex");
+  }
+</script>
+<figure class="bg-gray-100 rounded-xl p-8">
+  <img class="w-32 h-32 rounded-full mx-auto" src="https://images.unsplash.com/photo-1544207763-2872e5eb9b78?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" width="384" height="512">
+  <div class="pt-6 space-y-4">
+    <blockquote>
+      <p class="text-lg font-semibold">
+        “Share To Heal is an initiative to help people cope up with the increasing mental health deterioration due to the effects keeping oneself in a confined space. It provides users to interact with other users of the community via a post and as well as connect with certain certified professionals for help.”
+      </p>
+    </blockquote>
+    <figcaption class="font-medium">
+      <div class="text-cyan-600">
+        Team Zenith
+      </div>
+      <div class="text-gray-500">
+        Developers of this project,DTU
+      </div>
+    </figcaption>
+  </div>
+</figure>

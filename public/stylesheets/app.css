@@ -1,0 +1,75 @@
+.ui.menu
+{
+	background:  rgba(44,62,8,0.5);
+}
+.ui.menu .item
+{
+	color: rgba(250,250,250,0.87)
+}
+i.icon
+{
+	font-size:2em;
+}
+.container.main
+{
+	margin-top:7.0em;
+}
+#delete
+{
+	display:inline;
+}
+body
+{
+	background:url(https://images.unsplash.com/photo-1485546784815-e380f3297414?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80);
+	background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+. ui huge header
+{
+	color:white
+}
+.card.mb-5
+{
+	background:rgba(250,250,250,0.8);
+}
+.card.mb-5:hover
+{
+	
+     background:rgba(0,0,0,0.5);
+     color:white;
+}
+.jumbotron
+{
+	padding:250px;
+	background:rgba(0,0,0,0.5);
+	opacity:0.8;
+	background-size:cover;
+	background-repeat:no-repeat;
+	font-family: fantasy;
+    color:Black;
+	position:relative;
+	z-index:1;
+	
+}
+.jumbotron h1
+{
+	font-family: fantasy;
+	/* background: rgba(0,0,0,0.5); */
+    color: white;
+}
+#head
+{
+	margin-top:7.0em;
+	z-index:1;
+	position:relative;
+}
+
+#archive
+{
+	background:black;
+	position:relative;
+	z-index:1;
+	color:white;
+	margin-bottom:0;
+}

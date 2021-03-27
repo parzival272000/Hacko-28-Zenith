@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+<div class="ui main text container segment">
+	<div class="field">
+		Joining as Professional
+		</div>
+	<div class="ui huge header">
+		Sign Up
+	</div>
+	<form class="ui form" action="/profregister" method="POST">
+		<div class="field">
+			<label>Create a Username</label>
+			<input type="text" name="prousername" placeholder="Username">
+		</div>
+		<div class="field">
+			<label>Create a Passsword</label>
+			<input type="password" name="propassword" placeholder="Password">
+		</div>
+		<div class="field">
+			<label>Category of expertise</label>
+			<select  name="procategory">
+               <option value="Trauma related">Trauma related</option>
+               <option value="Stress and Depression related">Stress and Depression related</option>
+               <option value="Illness related">Illness related</option>
+               <option value="Other">Other</option>
+            </select>
+			<!-- <input type="text" name="procategory" placeholder="category"> -->
+		</div>
+		<input class="ui violet inverted button" type="submit">
+	</form>
+</div>
+<%- include("partials/footer.ejs") %>
+        

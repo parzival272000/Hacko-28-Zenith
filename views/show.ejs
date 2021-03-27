@@ -1,0 +1,101 @@
+<%- include("partials/header.ejs") %>
+<div class="ui main text container segment">
+	<div class="ui huge header">
+		<%=post.title%>
+	</div>
+	<div class="ui top attached segment">
+	     <div class="item">
+		      <img class="ui centered rounded image" src="<%= post.image%>">
+			 <div class="content">
+				 <span><%=post.created.toDateString()%></span>
+			 </div>
+			 <div class="description">
+				 <p>
+		            <%- post.description%>
+	             </p>
+			 </div>
+			 <div class="text-center">
+				 <strong>submitted by:---<%=post.author.username%></strong>
+			 </div>
+			 <%if(currentUser && post.author.id.equals(currentUser._id)){%>
+			 <div class="ui buttons">
+			 <a class="ui positive button" href="/posts/<%=post._id%>/edit">Edit</a>
+		     <div class="or"></div>
+			 <form id="delete" action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+				 <button class="ui blue button">
+					 Delete
+				 </button>
+			 </form>
+		     </div>
+			 <%}else{}%>
+		</div>
+		<div class="item">
+			<h1>
+				Comments<i class="sort down icon"></i>
+			</h1>
+			<div class="text-right">
+					<a class="btn btn-outline-success" href="/posts/<%=post._id%>/comments/new">Leave a comment</a>
+				</div>
+                <% post.comments.forEach(function(comment){%>
+				<div class="row">
+					<div class="col-md-12">
+						<strong><%=comment.author.username%></strong>
+						<span class="float-right"><%=comment.created.toDateString()%></span>
+						<p><%=comment.text%></p>
+						<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
+						 <div class="ui buttons">
+			                <a class="ui yellow button" href="/posts/<%=post._id%>/comments/<%=comment._id%>/edit">Edit</a>
+		                 <div class="or"></div>
+			             <form id="delete" action="/posts/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+				          <button class="ui red button">
+					       Delete
+				          </button>
+			              </form>
+		                  </div>
+						<% }else{}%>
+					</div>
+				</div>
+			    <% }); %>
+		</div>
+	</div>
+</div>
+
+
+<div class="ui main text container segment">
+	<div class="ui huge header">
+		Relevant Professionals available for help
+	</div>
+	<div class="ui top attached segment">
+	<div class="ui divided items">
+	<% for(var i=0;i<3;i++){%>
+	
+		
+	     <div class="item">
+		      <img class="image" src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8ZG9jdG9yfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+			 <div class="content">
+				 <strong>Certified</strong>
+			 
+			 <div class="description">
+				 <p>
+		            Completed a Bachelor (BA or BS) in Psychology degree (the curriculum of which focuses on “personality development, psychotherapy, stress management and neuro-psychology”
+	             </p>
+				 <div class="text-right">
+					<a class="btn btn-outline-success" href="/posts/<%=post._id%>/comments/new">Chat</a>
+				</div>
+			 </div>
+		    </div>
+		</div>
+		<div class="item">
+			<h1>
+				<!-- Comments<i class="sort down icon"></i> -->
+				Reviews
+			</h1>
+		</div>
+	
+	<%}%>
+	</div>
+	</div>
+</div>
+               
+
+<%- include("partials/footer.ejs") %>
